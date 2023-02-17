@@ -1,0 +1,7 @@
+
+apply from: "../mvc2-common.gradle"
+
+dependencies {
+
+}
+

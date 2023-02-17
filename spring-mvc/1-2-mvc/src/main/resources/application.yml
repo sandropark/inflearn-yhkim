@@ -1,0 +1,11 @@
+server.port: 8090
+
+logging:
+  level:
+#    root: info  // ???
+#    com.sandro.springmvc: trace
+#    com.sandro.springmvc: debug
+#    com.sandro.springmvc: info
+#    com.sandro.springmvc: warn
+#    com.sandro.springmvc: error
+    org.apache.coyote.http11: debug

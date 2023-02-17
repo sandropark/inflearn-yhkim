@@ -1,0 +1,9 @@
+logging:
+  level:
+#    root: info  // ???
+#    hello.springmvc: trace
+#    hello.springmvc: debug
+#    hello.springmvc: info
+#    hello.springmvc: warn
+#    hello.springmvc: error
+    org.apache.coyote.http11: debug
