@@ -1,7 +1,7 @@
 rootProject.name = 'inflearn-yhkim'
 
 
-["jpa", "spring", "spring-mvc", "spring-mvc2"].each {  // 프로젝트가 생성될 상위 디렉토리를 생성한다.
+["jpa", "spring", "spring-mvc", "spring-mvc2", "db"].each {  // 프로젝트가 생성될 상위 디렉토리를 생성한다.
 
     def compDir = new File(rootDir, it)
     if (!compDir.exists()) {
