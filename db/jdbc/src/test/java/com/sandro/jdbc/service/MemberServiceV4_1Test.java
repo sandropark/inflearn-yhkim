@@ -13,8 +13,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.sql.SQLException;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -31,7 +29,7 @@ class MemberServiceV4_1Test {
     final int seedMoney = 10000;
     int transferAmount = 1000;
 
-    @Qualifier("memberRepositoryV4_2")
+    @Qualifier("memberRepositoryV5")
     @Autowired
     MemberRepository memberRepository;
     @Autowired
@@ -42,14 +40,14 @@ class MemberServiceV4_1Test {
     }
 
     @BeforeEach
-    void setUp() throws SQLException {
+    void setUp() {
         memberRepository.save(new Member(MEMBER_A, seedMoney));
         memberRepository.save(new Member(MEMBER_B, seedMoney));
         memberRepository.save(new Member(MEMBER_EX, seedMoney));
     }
 
     @AfterEach
-    void tearDown() throws SQLException {
+    void tearDown() {
         memberRepository.deleteAll();
     }
 

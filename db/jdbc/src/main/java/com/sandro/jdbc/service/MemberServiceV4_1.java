@@ -16,7 +16,7 @@ public class MemberServiceV4_1 {
 
     private final MemberRepository memberRepository;
 
-    public MemberServiceV4_1(@Qualifier("memberRepositoryV4_2") MemberRepository memberRepository) {
+    public MemberServiceV4_1(@Qualifier("memberRepositoryV5") MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
