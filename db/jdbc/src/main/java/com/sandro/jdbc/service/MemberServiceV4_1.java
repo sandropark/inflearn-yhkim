@@ -2,8 +2,8 @@ package com.sandro.jdbc.service;
 
 import com.sandro.jdbc.domain.Member;
 import com.sandro.jdbc.repository.MemberRepository;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,10 +12,13 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Slf4j
 @Service
-@RequiredArgsConstructor
 public class MemberServiceV4_1 {
 
     private final MemberRepository memberRepository;
+
+    public MemberServiceV4_1(@Qualifier("memberRepositoryV4_2") MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     @Transactional
     public void accountTransfer(String fromId, String toId, int money) {

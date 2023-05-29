@@ -9,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -30,6 +31,7 @@ class MemberServiceV4_1Test {
     final int seedMoney = 10000;
     int transferAmount = 1000;
 
+    @Qualifier("memberRepositoryV4_2")
     @Autowired
     MemberRepository memberRepository;
     @Autowired
