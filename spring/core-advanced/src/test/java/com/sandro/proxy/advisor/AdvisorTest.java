@@ -10,32 +10,50 @@ import org.springframework.aop.MethodMatcher;
 import org.springframework.aop.Pointcut;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
+import org.springframework.aop.support.NameMatchMethodPointcut;
 
 import java.lang.reflect.Method;
 
 @Slf4j
 class AdvisorTest {
 
+    ServiceInterface target = new ServiceImpl();
+    ProxyFactory proxyFactory;
+
     @Test
     void advisorTest1() throws Exception {
-        ServiceInterface target = new ServiceImpl();
-        ProxyFactory factory = new ProxyFactory(target);
+        proxyFactory = new ProxyFactory(target);
         DefaultPointcutAdvisor advisor = new DefaultPointcutAdvisor(Pointcut.TRUE, new TimeAdvice());
-        factory.addAdvisor(advisor);
+        proxyFactory.addAdvisor(advisor);
 
-        ServiceInterface proxy = (ServiceInterface) factory.getProxy();
+        ServiceInterface proxy = (ServiceInterface) proxyFactory.getProxy();
 
         proxy.save();
     }
 
     @Test
     void advisorTest2() throws Exception {
-        ServiceInterface target = new ServiceImpl();
-        ProxyFactory factory = new ProxyFactory(target);
+        proxyFactory = new ProxyFactory(target);
         DefaultPointcutAdvisor advisor = new DefaultPointcutAdvisor(new MyPointcut(), new TimeAdvice());
-        factory.addAdvisor(advisor);
+        proxyFactory.addAdvisor(advisor);
 
-        ServiceInterface proxy = (ServiceInterface) factory.getProxy();
+        ServiceInterface proxy = (ServiceInterface) proxyFactory.getProxy();
+
+        proxy.save();
+        proxy.find();
+    }
+
+    @Test
+    void advisor3() throws Exception {
+        proxyFactory = new ProxyFactory(target);
+
+        NameMatchMethodPointcut pointcut = new NameMatchMethodPointcut();
+        pointcut.setMappedName("save");
+
+        DefaultPointcutAdvisor advisor = new DefaultPointcutAdvisor(pointcut, new TimeAdvice());
+
+        proxyFactory.addAdvisor(advisor);
+        ServiceInterface proxy = (ServiceInterface) proxyFactory.getProxy();
 
         proxy.save();
         proxy.find();
