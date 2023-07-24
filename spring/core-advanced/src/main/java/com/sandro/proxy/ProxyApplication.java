@@ -2,7 +2,7 @@ package com.sandro.proxy;
 
 import com.sandro.part3.trace.logtrace.LogTrace;
 import com.sandro.part3.trace.logtrace.ThreadLocalLogTrace;
-import com.sandro.proxy.config.v4_postprocessor.BeanPostProcessorConfig;
+import com.sandro.proxy.config.v5_autoproxy.AutoProxyConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -16,7 +16,8 @@ import org.springframework.context.annotation.Import;
 //@Import(DynamicProxyFilterConfig.class)
 //@Import(ProxyFactoryConfigV1.class)
 //@Import(ProxyFactoryConfigV2.class)
-@Import(BeanPostProcessorConfig.class)
+//@Import(BeanPostProcessorConfig.class)
+@Import(AutoProxyConfig.class)
 @SpringBootApplication(scanBasePackages = "com.sandro.proxy.app")
 public class ProxyApplication {
     public static void main(String[] args) {
