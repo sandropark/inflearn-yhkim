@@ -1,4 +1,4 @@
-package com.sandro.order.aop.exam.annotation;
+package com.sandro.aop.exam.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

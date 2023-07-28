@@ -1,4 +1,4 @@
-package com.sandro.order.aop.exam;
+package com.sandro.aop.exam;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;

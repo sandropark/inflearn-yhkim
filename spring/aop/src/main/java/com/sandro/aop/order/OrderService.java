@@ -1,4 +1,4 @@
-package com.sandro.order;
+package com.sandro.aop.order;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,8 +1,8 @@
 package com.sandro;
 
-import com.sandro.order.OrderRepository;
-import com.sandro.order.OrderService;
-import com.sandro.order.aop.AspectV5Order;
+import com.sandro.aop.order.OrderRepository;
+import com.sandro.aop.order.OrderService;
+import com.sandro.aop.order.aop.AspectV5Order;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.support.AopUtils;

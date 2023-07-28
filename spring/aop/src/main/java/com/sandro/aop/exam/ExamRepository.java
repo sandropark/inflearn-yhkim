@@ -1,7 +1,7 @@
-package com.sandro.order.aop.exam;
+package com.sandro.aop.exam;
 
-import com.sandro.order.aop.exam.annotation.Retry;
-import com.sandro.order.aop.exam.annotation.Trace;
+import com.sandro.aop.exam.annotation.Retry;
+import com.sandro.aop.exam.annotation.Trace;
 import org.springframework.stereotype.Repository;
 
 @Repository

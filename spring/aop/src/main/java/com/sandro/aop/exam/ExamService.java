@@ -1,6 +1,6 @@
-package com.sandro.order.aop.exam;
+package com.sandro.aop.exam;
 
-import com.sandro.order.aop.exam.annotation.Trace;
+import com.sandro.aop.exam.annotation.Trace;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

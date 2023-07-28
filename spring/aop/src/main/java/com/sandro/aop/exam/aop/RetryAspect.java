@@ -1,6 +1,6 @@
-package com.sandro.order.aop.exam.aop;
+package com.sandro.aop.exam.aop;
 
-import com.sandro.order.aop.exam.annotation.Retry;
+import com.sandro.aop.exam.annotation.Retry;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

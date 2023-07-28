@@ -1,4 +1,4 @@
-package com.sandro.order.aop;
+package com.sandro.aop.order.aop;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -12,13 +12,13 @@ import org.aspectj.lang.annotation.Aspect;
 @Aspect
 public class AspectV4Pointcut {
 
-    @Around("com.sandro.order.aop.Pointcuts.allOrder()")
+    @Around("com.sandro.aop.order.aop.Pointcuts.allOrder()")
     public Object doLog(ProceedingJoinPoint joinPoint) throws Throwable {
         log.info("[log] {}", joinPoint.getSignature());
         return joinPoint.proceed();
     }
 
-    @Around("com.sandro.order.aop.Pointcuts.orderAndService()")   // Order 패키지 하위의 모든 Service 클래스에 적용
+    @Around("com.sandro.aop.order.aop.Pointcuts.orderAndService()")   // Order 패키지 하위의 모든 Service 클래스에 적용
     public Object doTransaction(ProceedingJoinPoint joinPoint) throws Throwable {
         try {
             log.info("[트랜잭션 시작] {}", joinPoint.getSignature());
